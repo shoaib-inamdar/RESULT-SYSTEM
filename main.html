@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        #data {
+            display: none;
+        }
+    </style>
+    <style>
+        table {
+            border-color: rgb(243, 160, 7);
+            background-color: rgb(247, 240, 228);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="form1">
+        <div class="title">
+            <span>
+                <a href="https://sespolytechnic.org.in/" target="_target">
+                    <img src="s1.jpg" width="100px">
+
+                </a>
+                <h1>RESULT SYSTEM</h1>
+            </span>
+        </div>
+        <b>
+
+            <div class="box">
+                <label for="name">STUDENT NAME:</label>
+                <input type="text" id="Sname" placeholder="enter student name">
+                <br>
+                <br>
+                <label for="roll">ROLL NO:</label>
+                <input type="text" name="" id="rn" placeholder="enter roll no">
+                <br>
+                <br>
+                <label for="address">ADDRESS:</label>
+                <input type="text" name="" id="add" placeholder="enter your address">
+                <br>
+                <br>
+                <label for="gender">Select Your Gender:</label>
+                <input type="radio" name="gender" value="Male"/>Male
+                <input type="radio" name="gender" value="Female"/>Female
+                <br>
+                <br>
+                <label for="sub1">English Marks :</label>
+                <input type="text" name="" id="eng" placeholder="enter marks">
+                <br>
+                <br>
+                <label for="sub2">Marathi Marks :</label>
+                <input type="text" name="" id="mar" placeholder="enter marks">
+                <br><br>
+                <label for="sub3">Hindi Marks :</label>
+                <input type="text" name="" id="hin" placeholder="enter marks">
+                <br>
+                <br>
+                <label for="sub4">Science Marks :</label>
+                <input type="text" name="" id="sci" placeholder="enter marks">
+                <br><br>
+                <label for="sub5">Mathematics Marks :</label>
+                <input type="text" name="" id="math" placeholder="enter marks">
+                <br><br>
+                <label for="sub5">History/Geography Marks :</label>
+                <input type="text" name="" id="his" placeholder="enter marks">
+                <br><br>
+
+                <button onclick="display()">PRINT</button>
+            </div>
+        </b>
+        <button><a href="index.html">BACK TO HOME</a></button>
+    </div>
+    <div id="data">
+        <table width="800" align="center" border="5" name="studinfo">
+            <tr font="cambria" font-size="40">
+                <u>
+                    <th align="center" colspan="5">
+                        <h1>S.E.S Polytechnic</h1>
+                    </th>
+                </u>
+            </tr>
+            <tr>
+                <th align="left " colspan="1"> Student Name :
+                <td id="r_Sname"></td>
+                </th>
+                <th align="left">Gender <td id="gen">
+
+                </td></th>
+
+            </tr>
+            <tr>
+                <th align="left"> Roll No :
+                <td id="r_rn"></td>
+                </th>
+                <th align="left">Address :
+                <td id="r_add"></td>
+                </th>
+
+            </tr>
+
+        </table>
+        <br><BR>
+        <table border="3" align="center" width="800" name="Marks">
+            <tr>
+                <th>SUBJECTS</th>
+                <th>Max</th>
+                <th>Min</th>
+                <th>Obtained</th>
+            </tr>
+            <tr>
+                <th>English</th>
+                <th>100</th>
+                <th>35</th>
+                <th id="r_eng"></th>
+            </tr>
+            <tr>
+                <th>Marathi</th>
+                <th>100</th>
+                <th>35</th>
+                <th id="r_mar"></th>
+            </tr>
+            <tr>
+                <th>Hindi</th>
+                <th>100</th>
+                <th>35</th>
+                <th id="r_hin"></th>
+            </tr>
+            <tr>
+                <th>Science</th>
+                <th>100</th>
+                <th>35</th>
+                <th id="r_sci"></th>
+            </tr>
+            <tr>
+                <th>Mathematics</th>
+                <th>100</th>
+                <th>35</th>
+                <th id="r_math"></th>
+            </tr>
+            <tr>
+                <th>History/Geography</th>
+                <th>100</th>
+                <th>35</th>
+                <th id="r_his"></th>
+            </tr>
+            <tr>
+                <th colspan="3" align="right">TOTAL </th>
+                <th id="total"> </th>
+            </tr>
+            <tr>
+                <th colspan="3" align="right">PERCENTAGE </th>
+                <th id="percent"></th>
+            </tr>
+
+        </table>
+        <br><br>
+        <table align="center" name="result" border="3" width="800">
+            <tr>
+                <th>GRADE </th>
+                <th>RESULT</th>
+                <th>Promoted/Passed</th>
+            </tr>
+            <tr>
+                <th id="grade"></th>
+                <th id="result"></th>
+                <th id="class"></th>
+            </tr>
+        </table>
+
+        <button onclick="back()" class="click">BACK TO RESULT</button>
+    </div>
+    <script>
+        
+        function display() {
+            Sname = document.getElementById("Sname").value
+            rollno = document.getElementById("rn").value
+            add = document.getElementById("add").value
+            english = parseInt(document.getElementById("eng").value)
+            marathi = parseInt(document.getElementById("mar").value)
+            hindi = parseInt(document.getElementById("hin").value)
+            science = parseInt(document.getElementById("sci").value)
+            maths = parseInt(document.getElementById("math").value)
+            histo = parseInt(document.getElementById("his").value)
+
+            document.getElementById("r_Sname").innerHTML = Sname;
+            document.getElementById("r_rn").innerHTML = rollno;
+            document.getElementById("r_add").innerHTML = add;
+            document.getElementById("r_eng").innerHTML = english;
+            document.getElementById("r_mar").innerHTML = marathi;
+            document.getElementById("r_hin").innerHTML = hindi;
+            document.getElementById("r_sci").innerHTML = science;
+            document.getElementById("r_math").innerHTML = maths;
+            document.getElementById("r_his").innerHTML = histo;
+
+            document.getElementById("form1").style.display = "none"
+            document.getElementById("data").style.display = "block"
+            document.body.style.background = "white"
+
+            total = english + marathi + hindi + science + maths + histo;
+            document.getElementById("total").innerHTML = total;
+
+            percentage = (total / 600) * 100;
+            document.getElementById("percent").innerHTML = percentage;
+
+            if (percentage < 101 && percentage >= 85) {
+                document.getElementById("grade").innerHTML = "A++";
+                document.getElementById("result").innerHTML = "Pass..";
+                document.getElementById("class").innerHTML = "9th Class";
+            }
+            else if (percentage < 75 && percentage >= 60) {
+                document.getElementById("grade").innerHTML = "B";
+                document.getElementById("result").innerHTML = "Pass..";
+                document.getElementById("class").innerHTML = "9th Class";
+            }
+            else if (percentage < 60 && percentage >= 50) {
+                document.getElementById("grade").innerHTML = "C";
+                document.getElementById("result").innerHTML = "Pass..";
+                document.getElementById("class").innerHTML = "9th Class";
+            }
+            else if (percentage < 50 && percentage >= 35) {
+                document.getElementById("grade").innerHTML = "D";
+                document.getElementById("result").innerHTML = "Pass..";
+                document.getElementById("class").innerHTML = "9th Class";
+            }
+            else if(percentage<35){
+                document.getElementById("grade").innerHTML = "-";
+                document.getElementById("result").innerHTML = "Fail..";
+                document.getElementById("class").innerHTML = "-";
+            }
+            
+            
+            var g=document.getElementsByName("gender");
+            var i
+            for(i=0;i<=g.length;i++)
+            {
+                if(g[i].checked){
+                    document.getElementById("gen").innerHTML=g[i].value;
+                }
+            }
+        }
+        function back(){
+            document.getElementById("form1").style.display = "block"
+            document.getElementById("data").style.display = "none"
+        }
+
+    </script>
+    <!-- <script src="JS_file.js"></script> -->
+
+</body>
+
+</html>
